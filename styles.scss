@@ -55,27 +55,37 @@ body {
     width: 70%;
     margin: auto;
     position: relative;
+    display:flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 960px) {
+        flex-direction: row;
+    }
 
     #left-part {
         width: 100%;
-        height: 100%;
+        height: 50%;
+        padding: $xxs;
         display: flex;
         flex-direction: column;
         align-items: space-between;
+        border-bottom: $contour;
 
         @media screen and (min-width:960px){
             width: 50%;
+            height: 100%;
             border-right: $contour;
+            border-bottom: none;
         }
 
         #screen {
             background: $grey;
             border: $bigcontour;
+            width: 90%;
             height: $medium-extra;
-            width: $large;
+            max-width: $large;
             border-radius: 5px 5px 5px 30px;
             margin: auto;
-            margin-top: $xs;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -84,7 +94,8 @@ body {
                 background: white;
                 border: $contour;
                 height: $medium;
-                width: $largish;
+                width: 70%;
+                max-width: $largish;
                 border-radius: 5px;
             }
         }
@@ -95,15 +106,54 @@ body {
             border-radius: 5px;
             height: $small;
             width: $medium;
-            margin: $xxs auto;
+            margin: auto;
         }
     }
 
     #right-part {
         width: 100%;
+        height: 50%;
+        padding: $xxs;
 
         @media screen and (min-width:960px){
             width: 50%;
+            height: 100%;
+        }
+
+        #search {
+            margin: 0 auto;
+            display: flex;
+            width: 100%;
+            max-width: $large;
+            flex-direction: column;
+            justify-content: space-around;
+
+            @media screen and (min-width:960px){
+                flex-direction: row;
+            }
+
+            input {
+                height: $xs;
+                margin: 5px 0;
+                padding: 0 $xxs;
+                border-radius: 5px;
+                border: $contour;
+                flex-basis: $xs;
+
+                &[type=button]{
+                    background: $blue;
+                    color: white;  
+                }
+
+                @media screen and (min-width:960px){
+                    flex-basis: $small;
+                    margin: 0 5px;
+
+                    &[type=text]{
+                        flex-grow: 2;
+                    }
+                }
+            }
         }
     }
 }
