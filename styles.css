@@ -197,6 +197,8 @@ body {
   border: 1px solid black;
   -ms-flex-preferred-size: 30px;
       flex-basis: 30px;
+  font-family: "pokemon_gbregular", sans-serif;
+  font-size: 10px;
 }
 
 #pokedex #right-part #search input[type=button] {
@@ -215,5 +217,48 @@ body {
         -ms-flex-positive: 2;
             flex-grow: 2;
   }
+}
+
+#pokedex #right-part #info {
+  background: #66F464;
+  border: 2px solid black;
+  width: 90%;
+  height: 50%;
+  max-width: 300px;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 5px;
+  color: black;
+  font-family: "pokemon_gbregular", sans-serif;
+  font-size: 10px;
+}
+
+@media screen and (min-width: 960px) {
+  #pokedex #right-part #info {
+    height: 180px;
+  }
+}
+
+#pokedex #right-part #info div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#pokedex #right-part #info div#name {
+  height: 30px;
+  border-bottom: 1px solid black;
+}
+
+#pokedex #right-part #info div#moves {
+  height: calc(100% - 30px);
 }
 /*# sourceMappingURL=styles.css.map */

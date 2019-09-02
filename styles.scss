@@ -140,6 +140,11 @@ body {
                 border: $contour;
                 flex-basis: $xs;
 
+                font: {
+                    family: $text;
+                    size: 10px;
+                }
+
                 &[type=button]{
                     background: $blue;
                     color: white;  
@@ -154,6 +159,45 @@ body {
                     }
                 }
             }
+        }
+
+        #info {
+            background: $green;
+            border: $bigcontour;
+
+            width: 90%;
+            height: 50%;
+            max-width: $large;
+            border-radius: 5px;
+            margin: 0 auto;
+            margin-top: $xxs;
+            padding: 5px;
+            color: black;
+
+            font: {
+                family: $text;
+                size: 10px;
+            }
+
+            @media screen and (min-width:960px){
+                height: $medium-extra;
+            }
+
+            div {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                &#name {
+                    height: $xs;
+                    border-bottom: $contour;
+                }
+
+                &#moves {
+                    height: calc(100% - 30px);
+                }
+            }
+            
         }
     }
 }
