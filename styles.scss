@@ -48,9 +48,62 @@ body {
 }
 
 #pokedex {
-    background: white;
+    background: $red;
+    border: $bigcontour;
     border-radius: 10px;
     height: 70%;
     width: 70%;
     margin: auto;
+    position: relative;
+
+    #left-part {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: space-between;
+
+        @media screen and (min-width:960px){
+            width: 50%;
+            border-right: $contour;
+        }
+
+        #screen {
+            background: $grey;
+            border: $bigcontour;
+            height: $medium-extra;
+            width: $large;
+            border-radius: 5px 5px 5px 30px;
+            margin: auto;
+            margin-top: $xs;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            #display {
+                background: white;
+                border: $contour;
+                height: $medium;
+                width: $largish;
+                border-radius: 5px;
+            }
+        }
+
+        #poke-number {
+            background: white;
+            border: $xxs solid $blue;
+            border-radius: 5px;
+            height: $small;
+            width: $medium;
+            margin: $xxs auto;
+        }
+    }
+
+    #right-part {
+        width: 100%;
+
+        @media screen and (min-width:960px){
+            width: 50%;
+        }
+    }
 }
