@@ -1,0 +1,56 @@
+/*---------------------------------------------------
+----------------------IMPORTS------------------------
+---------------------------------------------------*/
+@import "./helpers/colors.scss";
+@import "./helpers/fonts.scss";
+@import "./helpers/sizing.scss";
+
+/*---------------------------------------------------
+--------------------MAIN RESET-----------------------
+---------------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+/*---------------------------------------------------
+----------------------LAYOUT-------------------------
+---------------------------------------------------*/
+
+body {
+    background: url("./images/Pokedex-background.jpg") center center no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+#title {
+    h1 {
+        font: {
+            family: $title;
+            size: $small;
+        }
+        filter: drop-shadow(-2px 2px darken($blue, 10%));
+        color: $yellow;
+        -webkit-text-stroke: 1px $blue;
+    }
+    text-align: center;
+    margin-top: $small;
+}
+
+#pokedex {
+    background: white;
+    border-radius: 10px;
+    height: 70%;
+    width: 70%;
+    margin: auto;
+}

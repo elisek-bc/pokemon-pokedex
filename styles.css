@@ -1,0 +1,73 @@
+/*---------------------------------------------------
+----------------------IMPORTS------------------------
+---------------------------------------------------*/
+@font-face {
+  font-family: 'pokemon_gbregular';
+  src: url("../fonts/pokemon_gb-webfont.woff2") format("woff2"), url("../fonts/pokemon_gb-webfont.woff") format("woff"), url("../fonts/pokemon_GB.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'pocket_monkregular';
+  src: url("../fonts/pocket_monk-webfont.woff2") format("woff2"), url("../fonts/pocket_monk-webfont.woff") format("woff"), url("../fonts/Pocket_Monk.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*---------------------------------------------------
+--------------------MAIN RESET-----------------------
+---------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/*---------------------------------------------------
+----------------------LAYOUT-------------------------
+---------------------------------------------------*/
+body {
+  background: url("./images/Pokedex-background.jpg") center center no-repeat;
+  background-size: cover;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#title {
+  text-align: center;
+  margin-top: 60px;
+}
+
+#title h1 {
+  font-family: "pocket_monkregular", monospace;
+  font-size: 60px;
+  -webkit-filter: drop-shadow(-2px 2px #2d3ba5);
+          filter: drop-shadow(-2px 2px #2d3ba5);
+  color: #FFDE00;
+  -webkit-text-stroke: 1px #3B4CCA;
+}
+
+#pokedex {
+  background: white;
+  border-radius: 10px;
+  height: 70%;
+  width: 70%;
+  margin: auto;
+}
+/*# sourceMappingURL=styles.css.map */
