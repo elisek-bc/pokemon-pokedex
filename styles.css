@@ -3,14 +3,14 @@
 ---------------------------------------------------*/
 @font-face {
   font-family: 'pokemon_gbregular';
-  src: url("../fonts/pokemon_gb-webfont.woff2") format("woff2"), url("../fonts/pokemon_gb-webfont.woff") format("woff"), url("../fonts/pokemon_GB.ttf") format("truetype");
+  src: url("./fonts/pokemon_GB.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'pocket_monkregular';
-  src: url("../fonts/pocket_monk-webfont.woff2") format("woff2"), url("../fonts/pocket_monk-webfont.woff") format("woff"), url("../fonts/Pocket_Monk.otf") format("opentype");
+  src: url("./fonts/Pocket_Monk.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
