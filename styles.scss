@@ -74,6 +74,7 @@ body {
         @media screen and (min-width:960px){
             width: 50%;
             height: 100%;
+            padding: 0;
             border-right: $contour;
             border-bottom: none;
         }
@@ -125,7 +126,14 @@ body {
                 position: absolute;
                 color: white;
                 top: -$xxs;
+                left: 50%;
+                transform: translateX(-50%);
             }
+        }
+
+        canvas {
+            width: 100%;
+            height: 100px;
         }
     }
 
@@ -158,11 +166,13 @@ body {
                 border-radius: 5px;
                 border: $contour;
                 flex-basis: $xs;
+                text-transform: uppercase; 
                 @extend %text-props;
 
                 &[type=button]{
                     background: $blue;
-                    color: white;  
+                    color: white; 
+                    
                 }
 
                 @media screen and (min-width:960px){
@@ -202,7 +212,6 @@ body {
 
                 &#name {
                     height: $xs;
-                    border-bottom: $contour;
                 }
 
                 &#moves {
@@ -218,3 +227,4 @@ body {
         }
     }
 }
+

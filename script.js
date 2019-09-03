@@ -22,31 +22,39 @@ const pokeSpecies = pokeData.pokemon_species;
 
 searchButton.addEventListener('click', () => {
     const results = pokeSpecies.filter((specimen)=> {
-        //return name.includes(input.value);
         const lowercaseInput = input.value.toLowerCase();
         return specimen.name === lowercaseInput;
     });
+    if (results[0] === undefined){
+        nameBox.style.color = "#CC0000";
+        nameBox.innerHTML = "No matching Pokemon found";
+        movesBox.innerHTML = "";
+        nameBox.style.borderBottom = "none";
 
-    nameBox.innerHTML = results[0].name;
-    input.value="";
+    } else {
+        nameBox.style.color = "black";
+        nameBox.innerHTML = results[0].name.toUpperCase();
+        nameBox.style.borderBottom = "1px solid black"
+        input.value="";
 
-    const pokeSpeciesData = fetchData(`https://pokeapi.co/api/v2/pokemon/${results[0].name}`);
+        const pokeSpeciesData = fetchData(`https://pokeapi.co/api/v2/pokemon/${results[0].name}`);
 
-    movesBox.innerHTML = "";
-    const list = document.createElement('ul');
-    movesBox.append(list);
-    pokeSpeciesData.moves.map((move) => {
-        const listEl = document.createElement('li');
-        listEl.innerHTML = move.move.name;
-        list.append(listEl);
+        movesBox.innerHTML = "";
+        const list = document.createElement('ul');
+        movesBox.append(list);
+
+        pokeSpeciesData.moves.map((move) => {
+            const listEl = document.createElement('li');
+            listEl.innerHTML = move.move.name;
+            list.append(listEl);
+        })
+
+        console.log(pokeSpeciesData.sprites.front_default);
+        const imageScreen = document.getElementById("displayImage");
+        imageScreen.src = pokeSpeciesData.sprites.front_default;
+        imageScreen.alt = `${results[0].name}-image`;
+
+        const gameIndex = pokeSpeciesData.game_indices[4].game_index;
+        pokeNumberBox.querySelector('p').innerHTML = gameIndex;
     }
-    )
-    console.log(pokeSpeciesData.sprites.front_default);
-    const imageScreen = document.getElementById("displayImage");
-    imageScreen.src = pokeSpeciesData.sprites.front_default;
-    imageScreen.alt = `${results[0].name}-image`;
-
-    const gameIndex = pokeSpeciesData.game_indices[4].game_index;
-    
-    pokeNumberBox.querySelector('p').innerHTML = gameIndex;
 });
