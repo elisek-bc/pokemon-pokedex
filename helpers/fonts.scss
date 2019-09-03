@@ -19,3 +19,12 @@
 
 $text: "pokemon_gbregular", sans-serif;
 $title: "pocket_monkregular", monospace;
+
+%text-props {
+    font: {
+        family: $text;
+        size: 10px;
+    }
+    letter-spacing: 0.2em;
+    line-height: 2em;
+}
