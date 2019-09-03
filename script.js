@@ -36,10 +36,12 @@ searchButton.addEventListener('click', () => {
         nameBox.innerHTML = "No matching Pokemon found";
         movesBox.innerHTML = "";
         nameBox.style.borderBottom = "none";
-        pokeNumberBox.innerHTML = "";
-        typeBox.innerHTML = "";
-        imageScreen.src="";
-        imageScreen.alt="";
+        if(typeBox.hasChildNodes && imageScreen.src != null){
+            typeBox.innerHTML = "";
+            imageScreen.src="";
+            imageScreen.alt="";
+            pokeNumberBox.querySelector('p').innerHTML = "";
+        }
     
     // matches
     } else {
@@ -73,7 +75,6 @@ searchButton.addEventListener('click', () => {
         // show types
         typeBox.innerHTML="";
         pokeSpeciesData.types.map((item) => {
-            console.log(item.type.name);
             const divType = document.createElement('div');
 
             switch (item.type.name) {
