@@ -87,59 +87,89 @@ body {
             padding-bottom: $xxs;
             border-bottom: none;
 
-            .circle {
-                height: $small;
-                width: $small;
-                border: $contour;
-                margin-right: $xxs/2;
-                border-radius: 50%;
-                background: $grey;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                &.medium {
-                    margin-right: 0;
-                    height: 80%;
-                    width: 80%;
-                    
-                    &#blue {
-                        background: $aqua; 
-                    }
-                }
-
-                &.small {
-                    width: $xxs;
-                    height: $xxs;
-                }
-
-                &#red {
-                    background: $red;
-                }
-                &#yellow {
-                    background: $yellow;
-                }
-                &#green {
-                    background: $green;
-                }
-            }
-
             @media screen and (min-width:960px){
                 border-bottom: $contour;
             }
+        }
+
+        .circle {
+            height: $small;
+            width: $small;
+            border: $contour;
+            margin-right: $xxs/2;
+            border-radius: 50%;
+            background: $grey;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &.medium {
+                margin-right: 0;
+                height: 80%;
+                width: 80%;
+                position: relative;
+                
+                &.blue {
+                    background: $aqua; 
+                }
+            }
+
+            &.small {
+                width: $xxs;
+                height: $xxs;
+                position: relative;
+            }
+
+            &.xsmall {
+                width: $xxs/2;
+                height: $xxs/2;
+            }
+
+            &.red {
+                background: $red;
+            }
+            &.yellow {
+                background: $yellow;
+            }
+            &.green {
+                background: $green;
+            }
+        }
+
+        .glare {
+            border-radius: 50%;
+            position: absolute;
+            background: white;
+            border: none;
+            height: 30%;
+            width: 30%;
+            right: 20%;
+            top: 20%;
         }
 
         #screen {
             background: $grey;
             border: $bigcontour;
             width: 90%;
+            position: relative;
             height: $medium-extra;
             max-width: $large;
             border-radius: 5px 5px 5px 30px;
             margin: auto;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+
+            #tinydetails{
+                display: flex;
+                position: absolute;
+                flex-direction: row;
+                left: 50%;
+                transform: translateX(-50%);
+                top: $xxs/2;
+            }
 
             #display {
                 background: white;
@@ -178,6 +208,23 @@ body {
                 top: -$xxs;
                 left: 50%;
                 transform: translateX(-50%);
+            }
+        }
+
+        #types {
+            position: absolute;
+            bottom: -20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            @extend %text-props;
+            text-transform: uppercase;
+
+            div {
+                border: $bigcontour;
+                border-radius: 5px;
+                margin: $xxs/2;
+                padding: 0 5px;
             }
         }
     }
