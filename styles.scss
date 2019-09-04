@@ -260,10 +260,12 @@ body {
                 flex-basis: $xs;
                 text-transform: uppercase; 
                 @extend %text-props;
+                text-align: center;
 
                 &[type=button]{
                     background: $blue;
                     color: white; 
+                    text-align: center;
                     
                 }
 
@@ -273,6 +275,7 @@ body {
 
                     &[type=text]{
                         flex-grow: 2;
+                        text-align: left !important;
                     }
                 }
             }

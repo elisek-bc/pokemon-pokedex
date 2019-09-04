@@ -3,14 +3,14 @@
 ---------------------------------------------------*/
 @font-face {
   font-family: 'pokemon_gbregular';
-  src: url("./fonts/pokemon_GB.otf") format("opentype");
+  src: url("./fonts/pokemon_GB.woff2") format("woff2"), url("./fonts/pokemon_GB.woff") format("woff"), url("./fonts/pokemon_GB.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'pocket_monkregular';
-  src: url("./fonts/Pocket_Monk.otf") format("opentype");
+  src: url("./fonts/Pocket_Monk.woff2") format("woff2"), url("./fonts/Pocket_Monk.woff") format("woff"), url("./fonts/Pocket_Monk.otf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -358,11 +358,13 @@ body {
   -ms-flex-preferred-size: 30px;
       flex-basis: 30px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 #pokedex #right-part #search input[type=button] {
   background: #3B4CCA;
   color: white;
+  text-align: center;
 }
 
 @media screen and (min-width: 960px) {
@@ -375,6 +377,7 @@ body {
     -webkit-box-flex: 2;
         -ms-flex-positive: 2;
             flex-grow: 2;
+    text-align: left !important;
   }
 }
 
